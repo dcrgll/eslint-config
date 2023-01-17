@@ -41,16 +41,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gar/promisify@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "@gar/promisify@npm:1.1.3"
-  checksum: 4059f790e2d07bf3c3ff3e0fec0daa8144fe35c1f6e0111c9921bd32106adaa97a4ab096ad7dab1e28ee6a9060083c4d1a4ada42a7f5f3f7a96b8812e2b757c1
-  languageName: node
-  linkType: hard
-
-"@nae-bad/eslint-config@workspace:.":
+"@daaaan/eslint-config@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@nae-bad/eslint-config@workspace:."
+  resolution: "@daaaan/eslint-config@workspace:."
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.48.1
     eslint-config-airbnb-base: ^15.0.0
@@ -74,6 +67,13 @@ __metadata:
     prettier: ">= 1.13"
   languageName: unknown
   linkType: soft
+
+"@gar/promisify@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@gar/promisify@npm:1.1.3"
+  checksum: 4059f790e2d07bf3c3ff3e0fec0daa8144fe35c1f6e0111c9921bd32106adaa97a4ab096ad7dab1e28ee6a9060083c4d1a4ada42a7f5f3f7a96b8812e2b757c1
+  languageName: node
+  linkType: hard
 
 "@next/eslint-plugin-next@npm:13.1.2":
   version: 13.1.2
