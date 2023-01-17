@@ -1,5 +1,6 @@
 {
   "name": "@daaaan/eslint-config",
+  "private": false,
   "version": "1.0.0",
   "description": "Dan's eslint config.",
   "main": "index.js",
