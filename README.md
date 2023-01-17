@@ -3,6 +3,6 @@
 ```
 // .eslintrc
 {
-  "extends": "@nae-bad/eslint-config"
+  "extends": "@daaaan/eslint-config"
 }
 ```
