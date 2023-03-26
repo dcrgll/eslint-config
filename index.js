@@ -6,7 +6,8 @@ module.exports = {
     'airbnb',
     'airbnb/hooks',
     'plugin:prettier/recommended',
-    'plugin:tailwindcss/recommended'
+    'plugin:tailwindcss/recommended',
+    'plugin:@next/next/recommended'
   ],
   env: {
     browser: true,
