@@ -1,76 +1,42 @@
+const base = require('./lib/base.js')
+const react = require('./lib/react.js')
+
 module.exports = {
-  // Configuration for JavaScript files
   extends: [
-    'airbnb-base',
-    'next/core-web-vitals', // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
-    'plugin:prettier/recommended'
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:prettier/recommended',
+    'plugin:tailwindcss/recommended'
   ],
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        semi: false,
-        trailingComma: 'none',
-        endOfLine: 'auto'
-      }
-    ]
+  env: {
+    browser: true,
+    commonjs: true,
+    es2021: true,
+    node: true,
+    jest: true
   },
-  overrides: [
-    // Configuration for TypeScript files
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      plugins: [
-        '@typescript-eslint',
-        'unused-imports',
-        'tailwindcss',
-        'simple-import-sort'
-      ],
-      extends: [
-        'plugin:tailwindcss/recommended',
-        'airbnb-typescript',
-        'next/core-web-vitals',
-        'plugin:prettier/recommended'
-      ],
-      parserOptions: {
-        project: './tsconfig.json'
-      },
-      rules: {
-        'prettier/prettier': [
-          'error',
-          {
-            singleQuote: true,
-            semi: false,
-            trailingComma: 'none',
-            endOfLine: 'auto',
-            arrowParens: 'always'
-          }
-        ],
-        'react/destructuring-assignment': 'off', // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
-        'react/require-default-props': 'off', // Allow non-defined react props as undefined
-        'react/jsx-props-no-spreading': 'off', // _app.tsx uses spread operator and also, react-hook-form
-        'react-hooks/exhaustive-deps': 'off', // Incorrectly report needed dependency with Next.js router
-        '@next/next/no-img-element': 'off', // We currently not using next/image because it isn't supported with SSG mode
-        '@typescript-eslint/comma-dangle': 'off', // Avoid conflict rule between Eslint and Prettier
-        '@typescript-eslint/consistent-type-imports': 'error', // Ensure `import type` is used when it's necessary
-        'import/prefer-default-export': 'off', // Named export is easier to refactor automatically
-        'simple-import-sort/imports': 'error', // Import configuration for `eslint-plugin-simple-import-sort`
-        'simple-import-sort/exports': 'error', // Export configuration for `eslint-plugin-simple-import-sort`
-        '@typescript-eslint/no-unused-vars': 'off',
-        'unused-imports/no-unused-imports': 'error',
-        'unused-imports/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
-      }
-    },
-    // Configuration for testing
-    {
-      files: ['**/*.spec.js'],
-      plugins: ['jest', 'jest-formatting', 'testing-library', 'jest-dom'],
-      extends: [
-        'plugin:jest/recommended',
-        'plugin:jest-formatting/recommended',
-        'plugin:testing-library/react',
-        'plugin:jest-dom/recommended'
-      ]
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     }
-  ]
+  },
+  plugins: ['simple-import-sort', 'import', 'tailwindcss'],
+  rules: {
+    ...base,
+    ...react
+  },
+  settings: {
+    react: {
+      // Tells eslint-plugin-react to automatically detect the version of React to use
+      version: 'detect'
+    },
+    'import/resolver': {
+      alias: {
+        map: [['@src', './src']],
+        extensions: ['.js']
+      }
+    }
+  }
 }
