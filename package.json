@@ -1,48 +1,54 @@
 {
   "name": "@daaaan/eslint-config",
   "private": false,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Dan's eslint config.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": ">=16.0.0"
   },
+  "files": [
+    "README.md",
+    "index.js",
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix"
+  },
+  "peerDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-tailwindcss": "^3.7.1",
+    "prettier": "^2.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "javascript",
+    "prettier"
+  ],
+  "author": {
+    "name": "Dan Cargill  ",
+    "url": "https://cargill.dev"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dcrgll/eslint-config.git"
   },
-  "keywords": [
-    "eslint",
-    "config",
-    "daaaan"
-  ],
-  "author": "Dan Cargill",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/dcrgll/eslint-config/issues"
   },
-  "homepage": "https://github.com/dcrgll/eslint-config#readme",
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "^13.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": ">= 2.22.1",
-    "eslint-plugin-jest": ">= 24.3.6",
-    "eslint-plugin-jest-dom": ">= 3.9.0",
-    "eslint-plugin-jest-formatting": ">= 1.4.0",
-    "eslint-plugin-jsx-a11y": ">= 6.4.1",
-    "eslint-plugin-prettier": ">= 3.4.0",
-    "eslint-plugin-react": ">= 7.23.2",
-    "eslint-plugin-react-hooks": ">= 4.2.0",
-    "eslint-plugin-simple-import-sort": ">= 7.0.0",
-    "eslint-plugin-tailwindcss": ">= 1.4.0",
-    "eslint-plugin-testing-library": ">= 4.9.2",
-    "eslint-plugin-unused-imports": ">= 1.1.4"
-  },
-  "peerDependencies": {
-    "eslint": "^6 || ^7.2.0",
-    "prettier": ">= 1.13"
-  }
+  "homepage": "https://github.com/dcrgll/eslint-config#readme"
 }
