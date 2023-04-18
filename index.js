@@ -125,5 +125,15 @@ module.exports = {
     '@typescript-eslint/comma-dangle': ['off'],
     'react/jsx-props-no-spreading': 'off'
   },
-  plugins: ['html', 'prettier', 'react-hooks']
+  plugins: ['html', 'prettier', 'react-hooks'],
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['./src'],
+        alias: {
+          '@': path.resolve('src')
+        }
+      }
+    }
+  }
 }
