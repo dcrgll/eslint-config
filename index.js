@@ -1,5 +1,6 @@
 require('@rushstack/eslint-patch/modern-module-resolution')
 
+
 module.exports = {
   extends: ['airbnb', 'prettier'],
   parser: '@babel/eslint-parser',
@@ -128,11 +129,8 @@ module.exports = {
   plugins: ['html', 'prettier', 'react-hooks'],
   settings: {
     'import/resolver': {
-      node: {
-        paths: ['./src'],
-        alias: {
-          '@': path.resolve('src')
-        }
+      alias: {
+        map: [['@', './src/']]
       }
     }
   }
