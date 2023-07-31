@@ -1,7 +1,7 @@
 {
   "name": "@daaaan/eslint-config",
   "private": false,
-  "version": "2.1.4",
+  "version": "2.2.0",
   "description": "Dan's eslint config.",
   "main": "index.js",
   "engines": {
@@ -36,7 +36,7 @@
   },
   "peerDependencies": {
     "eslint": "^8.29.0",
-    "prettier": "^2.8.0"
+    "prettier": "^3.0.0"
   },
   "keywords": [
     "eslint",
