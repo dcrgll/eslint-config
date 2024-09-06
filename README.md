@@ -1,4 +1,4 @@
-@_dca/prettier-config
+@_dca/eslint-config
 
-My personal Prettier config.
+My personal Eslint config.
 
